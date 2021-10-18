@@ -1,3 +1,3 @@
 #!/bin/bash
 
-groups | tr ' ' ','
+groups | tr -s ' ' ','
