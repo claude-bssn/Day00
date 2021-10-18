@@ -1,0 +1,896 @@
+Last login: Mon Oct 18 01:44:19 on console
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+iMac-ITA-20:~ admin$ $
+-bash: $: command not found
+iMac-ITA-20:~ admin$ ls -a
+.			.bash_sessions		Library
+..			.config			Movies
+.CFUserTextEncoding	Applications		Music
+.DS_Store		Desktop			Pictures
+.Trash			Documents		Postman
+.atom			Downloads		Public
+.bash_history		GNS3			VirtualBox VMs
+iMac-ITA-20:~ admin$ cd Documents/
+iMac-ITA-20:Documents admin$ ls -a
+.		..		.DS_Store	.localized
+iMac-ITA-20:Documents admin$ mkdir covers
+iMac-ITA-20:Documents admin$ ls 
+covers
+iMac-ITA-20:Documents admin$ ls -a
+.		..		.DS_Store	.localized	covers
+iMac-ITA-20:Documents admin$ cd covers
+iMac-ITA-20:covers admin$ gi init
+-bash: gi: command not found
+iMac-ITA-20:covers admin$ git add
+fatal: Not a git repository (or any of the parent directories): .git
+iMac-ITA-20:covers admin$ git add .
+fatal: Not a git repository (or any of the parent directories): .git
+iMac-ITA-20:covers admin$ git init
+Initialized empty Git repository in /Users/admin/Documents/covers/.git/
+iMac-ITA-20:covers admin$ git add .
+iMac-ITA-20:covers admin$ ls -a
+.	..	.git
+iMac-ITA-20:covers admin$ git commit -m "first commit"
+On branch master
+
+Initial commit
+
+nothing to commit
+iMac-ITA-20:covers admin$ git branch -M main
+error: refname refs/heads/master not found
+fatal: Branch rename failed
+iMac-ITA-20:covers admin$ ls -a
+.	..	.git
+iMac-ITA-20:covers admin$ rm rf ;git
+rm: rf: No such file or directory
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Forward-port local commits to the updated upstream head
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+iMac-ITA-20:covers admin$ rm rf .git
+rm: rf: No such file or directory
+rm: .git: is a directory
+iMac-ITA-20:covers admin$ ls -a
+.	..	.git
+iMac-ITA-20:covers admin$ rm -r .git
+override r--r--r--  admin/staff for .git/objects/4b/825dc642cb6eb9a060e54bf8d69288fbee4904? y
+iMac-ITA-20:covers admin$ ls -a
+.	..
+iMac-ITA-20:covers admin$ cd ..
+iMac-ITA-20:Documents admin$ mkdir Day00
+iMac-ITA-20:Documents admin$ mv ./covers/ ./Day00/
+iMac-ITA-20:Documents admin$ ls -a
+.		..		.DS_Store	.localized	Day00
+iMac-ITA-20:Documents admin$ cd Day00
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	covers
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	covers
+iMac-ITA-20:Day00 admin$ mkdir Ex00
+iMac-ITA-20:Day00 admin$ mv ./covers/ ./Ex00/
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	Ex00
+iMac-ITA-20:Day00 admin$ git init
+Initialized empty Git repository in /Users/admin/Documents/Day00/.git/
+iMac-ITA-20:Day00 admin$ git add Ex00/
+iMac-ITA-20:Day00 admin$ git commit-m "first commit"
+git: 'commit-m' is not a git command. See 'git --help'.
+
+Did you mean this?
+	commit-tree
+iMac-ITA-20:Day00 admin$ git commit -m "first commit"
+On branch master
+
+Initial commit
+
+nothing to commit
+iMac-ITA-20:Day00 admin$ git branch -M main
+error: refname refs/heads/master not found
+fatal: Branch rename failed
+iMac-ITA-20:Day00 admin$ git push 
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+iMac-ITA-20:Day00 admin$ git remote add origin git@github.com:claude-bssn/Day00.git
+iMac-ITA-20:Day00 admin$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+iMac-ITA-20:Day00 admin$     git push --set-upstream origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:claude-bssn/Day00.git'
+iMac-ITA-20:Day00 admin$ git push --set-upstream origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'git@github.com:claude-bssn/Day00.git'
+iMac-ITA-20:Day00 admin$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	.git	Ex00
+iMac-ITA-20:Day00 admin$ cd Ex00/
+iMac-ITA-20:Ex00 admin$ ls
+covers
+iMac-ITA-20:Ex00 admin$ ls -a
+.	..	covers
+iMac-ITA-20:Ex00 admin$ cd covers/
+iMac-ITA-20:covers admin$ ls
+iMac-ITA-20:covers admin$ mkdir Constructeurs
+iMac-ITA-20:covers admin$ cd Constructeurs/
+iMac-ITA-20:Constructeurs admin$ mkdir Sony
+iMac-ITA-20:Constructeurs admin$ mkdir Nintendo
+iMac-ITA-20:Constructeurs admin$ mkdir Microsoft
+iMac-ITA-20:Constructeurs admin$ mkdir ./Sony/ PS4
+mkdir: ./Sony/: File exists
+iMac-ITA-20:Constructeurs admin$ mkdir ./Sony/PS4
+iMac-ITA-20:Constructeurs admin$ cd sony
+iMac-ITA-20:sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ ls 
+Microsoft	Nintendo	PS4		Sony
+iMac-ITA-20:Constructeurs admin$ cd Sony/
+iMac-ITA-20:Sony admin$ ls
+PS4
+iMac-ITA-20:Sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir ./Sony/PS5
+iMac-ITA-20:Constructeurs admin$ ls
+Microsoft	Nintendo	PS4		Sony
+iMac-ITA-20:Constructeurs admin$ rm -r PS4
+iMac-ITA-20:Constructeurs admin$ ls
+Microsoft	Nintendo	Sony
+iMac-ITA-20:Constructeurs admin$ cd Sony/
+iMac-ITA-20:Sony admin$ ls
+PS4	PS5
+iMac-ITA-20:Sony admin$ cd..
+-bash: cd..: command not found
+iMac-ITA-20:Sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir ./Nintendo/Consoles
+iMac-ITA-20:Constructeurs admin$ cd sony
+iMac-ITA-20:sony admin$ ls
+PS4	PS5
+iMac-ITA-20:sony admin$ mkdir Consoles
+iMac-ITA-20:sony admin$ mc
+-bash: mc: command not found
+iMac-ITA-20:sony admin$ mv PS4 ./Consoles/
+iMac-ITA-20:sony admin$ mv PS5 ./Consoles/
+iMac-ITA-20:sony admin$ ls
+Consoles
+iMac-ITA-20:sony admin$ cd Consoles/
+iMac-ITA-20:Consoles admin$ ls
+PS4	PS5
+iMac-ITA-20:Consoles admin$ ls-a
+-bash: ls-a: command not found
+iMac-ITA-20:Consoles admin$ ls -a
+.	..	PS4	PS5
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/
+iMac-ITA-20:Nintendo admin$ ls
+Consoles
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir Nintendo/Consoles_Portables
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/
+iMac-ITA-20:Nintendo admin$ ls
+Consoles		Consoles_Portables
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir Microsoft/Consoles_Portables
+iMac-ITA-20:Constructeurs admin$ mkdir Microsoft/Consoles
+iMac-ITA-20:Constructeurs admin$ cd Microsoft/
+iMac-ITA-20:Microsoft admin$ ls
+Consoles		Consoles_Portables
+iMac-ITA-20:Microsoft admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Microsoft/
+iMac-ITA-20:Microsoft admin$ ls
+Consoles		Consoles_Portables
+iMac-ITA-20:Microsoft admin$ rm -r Consoles_Portables/
+iMac-ITA-20:Microsoft admin$ ls
+Consoles
+iMac-ITA-20:Microsoft admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ ls 
+Microsoft	Nintendo	Sony
+iMac-ITA-20:Constructeurs admin$ mkdir Sega
+iMac-ITA-20:Constructeurs admin$ mkdir Sega/Consoles
+iMac-ITA-20:Constructeurs admin$ cd ..
+iMac-ITA-20:covers admin$ cd ..
+iMac-ITA-20:Ex00 admin$ ls -a
+.	..	covers
+iMac-ITA-20:Ex00 admin$ cd ..
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	.git	Ex00
+iMac-ITA-20:Day00 admin$ cd Ex00/covers/Constructeurs/
+iMac-ITA-20:Constructeurs admin$ cd S
+Sega/ Sony/ 
+iMac-ITA-20:Constructeurs admin$ cd Sony/Consoles/PS4/
+iMac-ITA-20:PS4 admin$ cp /Users/admin/Downloads/covers/playstation_4* ./
+iMac-ITA-20:PS4 admin$ ls
+playstation_4.assassinscreedodyssey.jpg
+playstation_4.unchartedthelostlegacy.jpg
+playstation_4.watchdogs2.jpg
+iMac-ITA-20:PS4 admin$ cd ..
+iMac-ITA-20:Consoles admin$ cp /Users/admin/Downloads/covers/playstation_5* ./PS5
+iMac-ITA-20:Consoles admin$ cp /Users/admin/Downloads/covers/ps4* ./PS5
+iMac-ITA-20:Consoles admin$ cp /Users/admin/Downloads/covers/ps4* ./PS4
+iMac-ITA-20:Consoles admin$ cd PS5
+iMac-ITA-20:PS5 admin$ ls
+playstation_5.assassinscreedvalhalla.jpg
+playstation_5.farcry6.jpg
+playstation_5.residentevilvillage_.jpg
+ps4_fifa14.jpg
+iMac-ITA-20:PS5 admin$ mr rf ps4_fifa14.jpg 
+-bash: mr: command not found
+iMac-ITA-20:PS5 admin$ rm rf ps4_fifa14.jpg 
+rm: rf: No such file or directory
+iMac-ITA-20:PS5 admin$ ls
+playstation_5.assassinscreedvalhalla.jpg
+playstation_5.farcry6.jpg
+playstation_5.residentevilvillage_.jpg
+iMac-ITA-20:PS5 admin$ cd ..
+iMac-ITA-20:Consoles admin$ ls
+PS4	PS5
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Sony admin$ ls
+Consoles
+iMac-ITA-20:Sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ ls
+Microsoft	Nintendo	Sega		Sony
+iMac-ITA-20:Constructeurs admin$ cp /Users/admin/Downloads/covers/dc* ./Sega/Consoles/Dreamcast/
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file ... target_directory
+iMac-ITA-20:Constructeurs admin$ cd Sega/Consoles/
+iMac-ITA-20:Consoles admin$ ls
+iMac-ITA-20:Consoles admin$ mkdir Dreamcast
+iMac-ITA-20:Consoles admin$ ls
+Dreamcast
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Sega admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cp /Users/admin/Downloads/covers/dc* ./Sega/Consoles/Dreamcast/
+iMac-ITA-20:Constructeurs admin$ mkdir ./Nintendo/Consoles_Portables/
+mkdir: ./Nintendo/Consoles_Portables/: File exists
+iMac-ITA-20:Constructeurs admin$ mkdir ./Nintendo/Consoles_Portables/Gameboy
+iMac-ITA-20:Constructeurs admin$ cp /Users/admin/Downloads/covers/gameboy* ./Nintendo/Consoles_Portables/Gameboy/
+iMac-ITA-20:Constructeurs admin$ cp /Users/admin/Downloads/covers/gb* ./Nintendo/Consoles_Portables/Gameboy/
+iMac-ITA-20:Constructeurs admin$ mkdir ./Nintendo/Consoles_Portables/GameboyColor
+iMac-ITA-20:Constructeurs admin$ cp /Users/admin/Downloads/covers/gbc* ./Nintendo/Consoles_Portables/GameboyColor/
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/Consoles
+iMac-ITA-20:Consoles admin$ ls
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Nintendo admin$ ls
+Consoles		Consoles_Portables
+iMac-ITA-20:Nintendo admin$ Consoles_
+Consoles
+iMac-ITA-20:Nintendo admin$ cd Consoles_Portables/
+iMac-ITA-20:Consoles_Portables admin$ ls -a
+.		..		Gameboy		GameboyColor
+iMac-ITA-20:Consoles_Portables admin$ cd ..
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir ./Nintendo/Consoles/Gaymecube
+iMac-ITA-20:Constructeurs admin$ cd ./Nintendo/Consoles/Gaymecube
+iMac-ITA-20:Gaymecube admin$ cd ..
+iMac-ITA-20:Consoles admin$ rm -r Gaymecube/
+iMac-ITA-20:Consoles admin$ ls
+iMac-ITA-20:Consoles admin$ mkdir ./Nintendo/Consoles/Gamecube
+mkdir: ./Nintendo/Consoles: No such file or directory
+iMac-ITA-20:Consoles admin$ mkdir ./Gamecube
+iMac-ITA-20:Consoles admin$ ls
+Gamecube
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mv /Users/admin/Downloads/covers/gc* ./Nintendo/Consoles/Gamecube/
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/Consoles_Portables/Gameboy
+iMac-ITA-20:Gameboy admin$ ls
+gameboy.pokmonred.jpg	gb_pokemongreen_3.jpg	gbc_pokemongold.jpg
+gb_pokemonblue_eu.jpg	gb_pokemonyellow_au.jpg
+iMac-ITA-20:Gameboy admin$ cd ..
+iMac-ITA-20:Consoles_Portables admin$ ls
+Gameboy		GameboyColor
+iMac-ITA-20:Consoles_Portables admin$ rm -r GameboyColor/
+iMac-ITA-20:Consoles_Portables admin$ ls
+Gameboy
+iMac-ITA-20:Consoles_Portables admin$ cd ..
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Sony/Consoles/
+iMac-ITA-20:Consoles admin$ cd PS4
+iMac-ITA-20:PS4 admin$ ls
+playstation_4.assassinscreedodyssey.jpg
+playstation_4.unchartedthelostlegacy.jpg
+playstation_4.watchdogs2.jpg
+ps4_fifa14.jpg
+iMac-ITA-20:PS4 admin$ cd ..
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Sony admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ mkdir ./Microsoft/Consoles/Xbox360
+iMac-ITA-20:Constructeurs admin$ mkdir ./Microsoft/Consoles/Xbox
+iMac-ITA-20:Constructeurs admin$ mv /Users/admin/Downloads/covers/x360* ./Microsoft/Consoles/Xbox360
+iMac-ITA-20:Constructeurs admin$ mv /Users/admin/Downloads/covers/xbox_360* ./Microsoft/Consoles/Xbox360
+iMac-ITA-20:Constructeurs admin$ mv /Users/admin/Downloads/covers/Xbox* ./Microsoft/Consoles/xbox
+mv: rename /Users/admin/Downloads/covers/Xbox* to ./Microsoft/Consoles/xbox/Xbox*: No such file or directory
+iMac-ITA-20:Constructeurs admin$ mv /Users/admin/Downloads/covers/xbox* ./Microsoft/Consoles/Xbox
+iMac-ITA-20:Constructeurs admin$ ls -a
+.		Microsoft	Sega
+..		Nintendo	Sony
+iMac-ITA-20:Constructeurs admin$ cd Microsoft/
+iMac-ITA-20:Microsoft admin$ ls -a
+.		..		Consoles
+iMac-ITA-20:Microsoft admin$ cd Consoles/
+iMac-ITA-20:Consoles admin$ ls -a
+.	..	Xbox	Xbox360
+iMac-ITA-20:Consoles admin$ cd Xbox
+iMac-ITA-20:Xbox admin$ ls -a
+.					xbox_halo2.jpg
+..					xbox_halo_2.jpg
+xbox_deadoralive3.jpg			xbox_jetsetradiofuture_2.jpg
+xbox_deadtorights.jpg			xbox_needforspeedunderground2.jpg
+xbox_defjamfightforny.jpg
+iMac-ITA-20:Xbox admin$ cd ..
+iMac-ITA-20:Consoles admin$ cd Xbox360
+iMac-ITA-20:Xbox360 admin$ ls -a
+.				x360_callofduty4.jpg
+..				x360_callofdutyblackopsii.jpg
+x360_callfoduty3.jpg		xbox_360.fableiii.jpg
+x360_callofduty2.jpg
+iMac-ITA-20:Xbox360 admin$ cd ..
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Microsoft admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/
+iMac-ITA-20:Nintendo admin$ ls -a
+.			Consoles
+..			Consoles_Portables
+iMac-ITA-20:Nintendo admin$ cd Consoles
+iMac-ITA-20:Consoles admin$ ls -a
+.		..		Gamecube
+iMac-ITA-20:Consoles admin$ cd Gamecube/
+iMac-ITA-20:Gamecube admin$ ls -a
+.				gc_mariokartdoubledash.jpg
+..				gc_supermariosunshine.jpg
+iMac-ITA-20:Gamecube admin$ cd ..
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Nintendo/
+iMac-ITA-20:Nintendo admin$ cd Consoles_Portables/
+iMac-ITA-20:Consoles_Portables admin$ ls -a
+.	..	Gameboy
+iMac-ITA-20:Consoles_Portables admin$ cd Gameboy/
+iMac-ITA-20:Gameboy admin$ ls -a
+.			gb_pokemonblue_eu.jpg	gbc_pokemongold.jpg
+..			gb_pokemongreen_3.jpg
+gameboy.pokmonred.jpg	gb_pokemonyellow_au.jpg
+iMac-ITA-20:Gameboy admin$ cd ..
+iMac-ITA-20:Consoles_Portables admin$ cd ..
+iMac-ITA-20:Nintendo admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ cd Sega/
+iMac-ITA-20:Sega admin$ ls -a
+.		..		Consoles
+iMac-ITA-20:Sega admin$ cd Consoles/
+iMac-ITA-20:Consoles admin$ ls -a
+.		..		Dreamcast
+iMac-ITA-20:Consoles admin$ cd Dreamcast/
+iMac-ITA-20:Dreamcast admin$ ls -a
+.				dc_jetsetradio_eu_front.jpg
+..				dc_shenmue_eu.jpg
+dc_jetgrindradio_10.jpg		dc_shenmueii_5.jpg
+iMac-ITA-20:Dreamcast admin$ cd ..
+iMac-ITA-20:Consoles admin$ cd ..
+iMac-ITA-20:Sega admin$ cd ..
+iMac-ITA-20:Constructeurs admin$ ls Sony/
+Consoles
+iMac-ITA-20:Constructeurs admin$ ls -s
+total 0
+0 Microsoft	0 Nintendo	0 Sega		0 Sony
+iMac-ITA-20:Constructeurs admin$ ls -a
+.		Microsoft	Sega
+..		Nintendo	Sony
+iMac-ITA-20:Constructeurs admin$ 
+iMac-ITA-20:Constructeurs admin$ ls Sony/Consoles/PS4
+playstation_4.assassinscreedodyssey.jpg
+playstation_4.unchartedthelostlegacy.jpg
+playstation_4.watchdogs2.jpg
+ps4_fifa14.jpg
+iMac-ITA-20:Constructeurs admin$ ls Sony/Consoles/PS5
+playstation_5.assassinscreedvalhalla.jpg
+playstation_5.farcry6.jpg
+playstation_5.residentevilvillage_.jpg
+iMac-ITA-20:Constructeurs admin$ cd ..
+iMac-ITA-20:covers admin$ cd ..
+iMac-ITA-20:Ex00 admin$ ls -a
+.	..	covers
+iMac-ITA-20:Ex00 admin$ cd ..
+iMac-ITA-20:Day00 admin$ ls -a
+.		..		.DS_Store	.git		Ex00
+iMac-ITA-20:Day00 admin$ rm rf .DS_Store 
+rm: rf: No such file or directory
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	.git	Ex00
+iMac-ITA-20:Day00 admin$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Ex00/
+
+nothing added to commit but untracked files present (use "git add" to track)
+iMac-ITA-20:Day00 admin$ git add Ex00/
+git puiMac-ITA-20:Day00 admin$ git commit -m "first commit"
+[master (root-commit) 0a4569b] first commit
+ Committer: admin <admin@iMac-ITA-20.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 30 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_deadoralive3.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_deadtorights.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_defjamfightforny.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_halo2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_halo_2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_jetsetradiofuture_2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox/xbox_needforspeedunderground2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox360/x360_callfoduty3.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox360/x360_callofduty2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox360/x360_callofduty4.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox360/x360_callofdutyblackopsii.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Microsoft/Consoles/Xbox360/xbox_360.fableiii.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles/Gamecube/gc_mariokartdoubledash.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles/Gamecube/gc_supermariosunshine.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles_Portables/Gameboy/gameboy.pokmonred.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles_Portables/Gameboy/gb_pokemonblue_eu.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles_Portables/Gameboy/gb_pokemongreen_3.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles_Portables/Gameboy/gb_pokemonyellow_au.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Nintendo/Consoles_Portables/Gameboy/gbc_pokemongold.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sega/Consoles/Dreamcast/dc_jetgrindradio_10.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sega/Consoles/Dreamcast/dc_jetsetradio_eu_front.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sega/Consoles/Dreamcast/dc_shenmue_eu.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sega/Consoles/Dreamcast/dc_shenmueii_5.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS4/playstation_4.assassinscreedodyssey.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS4/playstation_4.unchartedthelostlegacy.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS4/playstation_4.watchdogs2.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS4/ps4_fifa14.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS5/playstation_5.assassinscreedvalhalla.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS5/playstation_5.farcry6.jpg
+ create mode 100644 Ex00/covers/Constructeurs/Sony/Consoles/PS5/playstation_5.residentevilvillage_.jpg
+iMac-ITA-20:Day00 admin$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+iMac-ITA-20:Day00 admin$ git push --set-upstream origin master
+The authenticity of host 'github.com (140.82.121.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com,140.82.121.4' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+iMac-ITA-20:Day00 admin$ cd ~
+iMac-ITA-20:~ admin$ ls -a
+.			.config			Movies
+..			.ssh			Music
+.CFUserTextEncoding	Applications		Pictures
+.DS_Store		Desktop			Postman
+.Trash			Documents		Public
+.atom			Downloads		VirtualBox VMs
+.bash_history		GNS3
+.bash_sessions		Library
+iMac-ITA-20:~ admin$ cd .ssh
+iMac-ITA-20:.ssh admin$ ls -a
+.		..		known_hosts
+iMac-ITA-20:.ssh admin$ $ ssh-keygen -t ed25519 -C "c.buisson@it-akademy.fr"
+-bash: $: command not found
+iMac-ITA-20:.ssh admin$ $ ssh-keygen -t rsa -b 4096 -C "c.buisson@it-akademy.fr" 
+-bash: $: command not found
+iMac-ITA-20:.ssh admin$ ssh-keygen -t rsa -b 4096 -C "c.buisson@it-akademy.fr"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/admin/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/admin/.ssh/id_rsa.
+Your public key has been saved in /Users/admin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:iB7lJXZMFzcdACEn3usRj0ugGTz1hIl0e3TU9S1XAuU c.buisson@it-akademy.fr
+The key's randomart image is:
++---[RSA 4096]----+
+|     ...*oO=B*+oo|
+|     ..*o@ o oo.+|
+|      B B =   E +|
+|     = X o =   o |
+|    o = S = .    |
+|   . .   o o     |
+|    .     o      |
+|                 |
+|                 |
++----[SHA256]-----+
+iMac-ITA-20:.ssh admin$ eval "$(ssh-agent -s)"
+Agent pid 1928
+iMac-ITA-20:.ssh admin$ open ~/.ssh/config
+The file /Users/admin/.ssh/config does not exist.
+iMac-ITA-20:.ssh admin$ touch ~/.ssh/config
+iMac-ITA-20:.ssh admin$ ls -a
+.		config		id_rsa.pub
+..		id_rsa		known_hosts
+iMac-ITA-20:.ssh admin$ vim config 
+iMac-ITA-20:.ssh admin$ ssh-add -K ~/.ssh/id_rsa
+Identity added: /Users/admin/.ssh/id_rsa (c.buisson@it-akademy.fr)
+iMac-ITA-20:.ssh admin$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCkkgetmUamE05O5rPoEKCtvdvh9BQnJBmdTq5j7Lh4tXxR9YStF80XpYO6Zc8zPjGtdXCgVrU4NjkPgqq3D5wCVTUVPhZ8UTkvfAm1Z4sXewj8YgfSnF62OmLZAOpDFhnl/DoygMDt0O0EBCr8Fznvn5H9BLigb/sY4pDLMkYtUIGVjVgDouIXrKNNz4MlJa+4jaWSd/tOoibbWepy5zKVFlSVj8Sx9OoszVKgNElYXPjN17Dvzthg/hMWaPZAgIL6x9J3HEzAelor+S+5B6Fb0Jou9sHcsYx2fhVcBgD/iBEKazuyMGBlE2fifSFi9rSdIJjVRvDPDHIxaaiomvfpgBhkzjNobS2FqRyo4TIaYTZlWfN26sJlCjwGaOPYYGMWDaqwnP9+oY6ViuuqP94G8RiWve5YBx1sg5vgKdCJsSnlVQKRxwOqOLtRtmO9B796P0skokG2+o0sHs8lAOdcoErFF+VyR9g7+sKmCm2p92+uRk/47XKlsYbNs+Yfcu/LqlwWugNt63EdFZRMgnLlFCovjSvU3HMkfY6XW69a1ywLleuZYPpUDFWaL0t8aYJJRhc3yH0TmH3tXuLR3z5jgjWkiYzVf4Gre5tM7nxUGxVkfIUoXk0On82MmyIkK1rBzNUZfvetiatHxByfjjLUCqWf9KF7xmalsNls20jvuQ== c.buisson@it-akademy.fr
+iMac-ITA-20:.ssh admin$ cd ~
+iMac-ITA-20:~ admin$ cd Documents/
+iMac-ITA-20:Documents admin$ cd 
+.DS_Store   .localized  Day00/      
+iMac-ITA-20:Documents admin$ cd Day00/
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	.git	Ex00
+iMac-ITA-20:Day00 admin$ git status
+On branch master
+nothing to commit, working directory clean
+iMac-ITA-20:Day00 admin$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+iMac-ITA-20:Day00 admin$ git push --set-upstream origin master
+Counting objects: 51, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (42/42), done.
+Writing objects: 100% (51/51), 61.68 MiB | 5.18 MiB/s, done.
+Total 51 (delta 0), reused 0 (delta 0)
+To git@github.com:claude-bssn/Day00.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+iMac-ITA-20:Day00 admin$ ls -a
+.	..	.git	Ex00
+iMac-ITA-20:Day00 admin$ cd Ex00/
+iMac-ITA-20:Ex00 admin$ ls
+covers
+iMac-ITA-20:Ex00 admin$ touch commands.txt
+iMac-ITA-20:Ex00 admin$ vim commands.txt 
+iMac-ITA-20:Ex00 admin$ history
+    1  npm install express -g
+    2  npm install express -g
+    3  mkdir Test express
+    4  cls
+    5  ls
+    6  cd Test_express/
+    7  sudo su
+    8  getcwd
+    9  exit
+   10  su root 
+   11  exit
+   12  reboot
+   13  su root
+   14  dscl . append /Groups/_developer GroupMembership stagiaire
+   15  sudo dscl . append /Groups/_developer GroupMembership stagiaire
+   16  exit
+   17  telnet 127.0.0.1 2001 ; exit
+   18  virtuakbox
+   19  virtualbox
+   20  diskutils list
+   21  diskutil list
+   22  $
+   23  ls -a
+   24  cd Documents/
+   25  ls -a
+   26  mkdir covers
+   27  ls 
+   28  ls -a
+   29  cd covers
+   30  gi init
+   31  git add
+   32  git add .
+   33  git init
+   34  git add .
+   35  ls -a
+   36  git commit -m "first commit"
+   37  git branch -M main
+   38  ls -a
+   39  rm rf ;git
+   40  rm rf .git
+   41  ls -a
+   42  rm -r .git
+   43  ls -a
+   44  cd ..
+   45  mkdir Day00
+   46  mv ./covers/ ./Day00/
+   47  ls -a
+   48  cd Day00
+   49  ls -a
+   50  ls -a
+   51  mkdir Ex00
+   52  mv ./covers/ ./Ex00/
+   53  ls -a
+   54  git init
+   55  git add Ex00/
+   56  git commit-m "first commit"
+   57  git commit -m "first commit"
+   58  git branch -M main
+   59  git push 
+   60  git remote add origin git@github.com:claude-bssn/Day00.git
+   61  git push
+   62      git push --set-upstream origin master
+   63  git push --set-upstream origin master
+   64  git status
+   65  ls -a
+   66  cd Ex00/
+   67  ls
+   68  ls -a
+   69  cd covers/
+   70  ls
+   71  mkdir Constructeurs
+   72  cd Constructeurs/
+   73  mkdir Sony
+   74  mkdir Nintendo
+   75  mkdir Microsoft
+   76  mkdir ./Sony/ PS4
+   77  mkdir ./Sony/PS4
+   78  cd sony
+   79  cd ..
+   80  ls 
+   81  cd Sony/
+   82  ls
+   83* 
+   84  mkdir ./Sony/PS5
+   85  ls
+   86  rm -r PS4
+   87  ls
+   88  cd Sony/
+   89  ls
+   90  cd..
+   91  cd ..
+   92  mkdir ./Nintendo/Consoles
+   93  cd sony
+   94  ls
+   95  mkdir Consoles
+   96  mc
+   97  mv PS4 ./Consoles/
+   98  mv PS5 ./Consoles/
+   99  ls
+  100  cd Consoles/
+  101  ls
+  102  ls-a
+  103  ls -a
+  104  cd ..
+  105  cd ..
+  106  cd Nintendo/
+  107  ls
+  108  cd ..
+  109  mkdir Nintendo/Consoles_Portables
+  110  cd Nintendo/
+  111  ls
+  112  cd ..
+  113  mkdir Microsoft/Consoles_Portables
+  114  mkdir Microsoft/Consoles
+  115  cd Microsoft/
+  116* 
+  117  cd ..
+  118  cd Microsoft/
+  119  ls
+  120  rm -r Consoles_Portables/
+  121  ls
+  122  cd ..
+  123  ls 
+  124  mkdir Sega
+  125  mkdir Sega/Consoles
+  126  cd ..
+  127  cd ..
+  128  ls -a
+  129  cd ..
+  130  ls -a
+  131  cd Ex00/covers/Constructeurs/
+  132  cd Sony/Consoles/PS4/
+  133  cp /Users/admin/Downloads/covers/playstation_4* ./
+  134  ls
+  135  cd ..
+  136  cp /Users/admin/Downloads/covers/playstation_5* ./PS5
+  137  cp /Users/admin/Downloads/covers/ps4* ./PS5
+  138  cp /Users/admin/Downloads/covers/ps4* ./PS4
+  139  cd PS5
+  140  ls
+  141  mr rf ps4_fifa14.jpg 
+  142  rm rf ps4_fifa14.jpg 
+  143  ls
+  144  cd ..
+  145  ls
+  146  cd ..
+  147  ls
+  148  cd ..
+  149  ls
+  150  cp /Users/admin/Downloads/covers/dc* ./Sega/Consoles/Dreamcast/
+  151  cd Sega/Consoles/
+  152  ls
+  153  mkdir Dreamcast
+  154  ls
+  155  cd ..
+  156  cd ..
+  157  cp /Users/admin/Downloads/covers/dc* ./Sega/Consoles/Dreamcast/
+  158  mkdir ./Nintendo/Consoles_Portables/
+  159  mkdir ./Nintendo/Consoles_Portables/Gameboy
+  160  cp /Users/admin/Downloads/covers/gameboy* ./Nintendo/Consoles_Portables/Gameboy/
+  161  cp /Users/admin/Downloads/covers/gb* ./Nintendo/Consoles_Portables/Gameboy/
+  162  mkdir ./Nintendo/Consoles_Portables/GameboyColor
+  163  cp /Users/admin/Downloads/covers/gbc* ./Nintendo/Consoles_Portables/GameboyColor/
+  164  cd Nintendo/Consoles
+  165  ls
+  166  cd ..
+  167  ls
+  168  cd Consoles_Portables/
+  169  ls -a
+  170  cd ..
+  171  cd ..
+  172  mkdir ./Nintendo/Consoles/Gaymecube
+  173* cd ./Nintendo/Consoles/Gaymecube
+  174  cd ..
+  175  rm -r Gaymecube/
+  176  ls
+  177  mkdir ./Nintendo/Consoles/Gamecube
+  178  mkdir ./Gamecube
+  179  ls
+  180  cd ..
+  181  cd ..
+  182  mv /Users/admin/Downloads/covers/gc* ./Nintendo/Consoles/Gamecube/
+  183  cd Nintendo/Consoles_Portables/Gameboy
+  184  ls
+  185  cd ..
+  186  ls
+  187  rm -r GameboyColor/
+  188  ls
+  189  cd ..
+  190  cd ..
+  191  cd Sony/Consoles/
+  192  cd PS4
+  193  ls
+  194  cd ..
+  195  cd ..
+  196  cd ..
+  197  mkdir ./Microsoft/Consoles/Xbox360
+  198  mkdir ./Microsoft/Consoles/Xbox
+  199  mv /Users/admin/Downloads/covers/x360* ./Microsoft/Consoles/Xbox360
+  200  mv /Users/admin/Downloads/covers/xbox_360* ./Microsoft/Consoles/Xbox360
+  201  mv /Users/admin/Downloads/covers/Xbox* ./Microsoft/Consoles/xbox
+  202  mv /Users/admin/Downloads/covers/xbox* ./Microsoft/Consoles/Xbox
+  203  ls -a
+  204  cd Microsoft/
+  205  ls -a
+  206  cd Consoles/
+  207  ls -a
+  208  cd Xbox
+  209  ls -a
+  210  cd ..
+  211  cd Xbox360
+  212  ls -a
+  213  cd ..
+  214  cd ..
+  215  cd ..
+  216  cd Nintendo/
+  217  ls -a
+  218  cd Consoles
+  219  ls -a
+  220  cd Gamecube/
+  221  ls -a
+  222  cd ..
+  223  cd ..
+  224  cd ..
+  225  cd Nintendo/
+  226  cd Consoles_Portables/
+  227  ls -a
+  228  cd Gameboy/
+  229  ls -a
+  230  cd ..
+  231  cd ..
+  232  cd ..
+  233  cd Sega/
+  234  ls -a
+  235  cd Consoles/
+  236  ls -a
+  237  cd Dreamcast/
+  238  ls -a
+  239  cd ..
+  240  cd ..
+  241  cd ..
+  242  ls Sony/
+  243  ls -s
+  244  ls -a
+  245  ls Sony/Consoles/PS4
+  246  ls Sony/Consoles/PS5
+  247  cd ..
+  248  cd ..
+  249  ls -a
+  250  cd ..
+  251  ls -a
+  252  rm rf .DS_Store 
+  253  ls -a
+  254  git status
+  255  git add Ex00/
+  256  git commit -m "first commit"
+  257  git push
+  258  git push --set-upstream origin master
+  259  cd ~
+  260  ls -a
+  261  cd .ssh
+  262  ls -a
+  263  $ ssh-keygen -t ed25519 -C "c.buisson@it-akademy.fr"
+  264  $ ssh-keygen -t rsa -b 4096 -C "c.buisson@it-akademy.fr"
+  265  ssh-keygen -t rsa -b 4096 -C "c.buisson@it-akademy.fr"
+  266  eval "$(ssh-agent -s)"
+  267  open ~/.ssh/config
+  268  touch ~/.ssh/config
+  269  ls -a
+  270  vim config 
+  271  ssh-add -K ~/.ssh/id_rsa
+  272  cat id_rsa.pub
+  273  cd ~
+  274  cd Documents/
+  275  cd Day00/
+  276  ls -a
+  277  git status
+  278  git push
+  279  git push --set-upstream origin master
+  280  ls -a
+  281  cd Ex00/
+  282  ls
+  283  touch commands.txt
+  284  vim commands.txt 
+  285  history
