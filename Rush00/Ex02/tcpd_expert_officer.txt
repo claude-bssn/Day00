@@ -1,1 +1,1 @@
- sort -k3 -nr tcpd_department.csv | head -1
+awk -F ',' '$2 == "Officer"' tcpd_department.csv | sort -k3 | head -1
